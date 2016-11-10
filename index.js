@@ -1,0 +1,9 @@
+"use strict";
+var child_process = require('child_process');
+var exec = child_process.exec;
+function temp(unit) {
+}
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = temp;
+
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7QUFHQSxJQUFZLGFBQWEsV0FBTSxlQUUvQixDQUFDLENBRjZDO0FBRTlDLElBQU0sSUFBSSxHQUFHLGFBQWEsQ0FBQyxJQUFJLENBQUE7QUFHL0IsY0FBNkIsSUFBVztBQUV4QyxDQUFDO0FBRkQ7c0JBRUMsQ0FBQSIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZXNDb250ZW50IjpbIi8vXG5pbXBvcnQgKiBhcyBvcyBmcm9tICdvcyc7XG5pbXBvcnQgKiBhcyBQcm9taXNlIGZyb20gJ2JsdWViaXJkJ1xuaW1wb3J0ICogYXMgY2hpbGRfcHJvY2VzcyBmcm9tICdjaGlsZF9wcm9jZXNzJ1xuXG5jb25zdCBleGVjID0gY2hpbGRfcHJvY2Vzcy5leGVjXG5cblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gdGVtcCh1bml0OnN0cmluZykge1xuICAgIFxufSJdfQ==
