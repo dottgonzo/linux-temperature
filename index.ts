@@ -19,7 +19,7 @@ version:string;
 
 interface Itemp {
 
-media:number;
+temperature:number;
 unit:string;
 
 cores: Icores[];
@@ -30,7 +30,7 @@ cores: Icores[];
 const exec = child_process.exec
 
 
-function getTemp(tocat: string, unit?: string) {
+function getTemp(tocat: string, unit?: string):Promise<Itemp> {
     return new Promise<Itemp>((resolve, reject) => {
 
         exec('cat ' + tocat, (error, stdout, stderr) => {
@@ -39,14 +39,15 @@ function getTemp(tocat: string, unit?: string) {
             if (error) {
                 reject(error)
             } else {
+                
 
                 if (stdout) {
-                    let temp
+                    let temp:Itemp={temperature:0,cores:[], unit:'default' }
                     const tempread = parseInt(stdout.replace('\n', ''))
                     if (tempread > 1000) {
-                        temp = tempread / 1000
+                        temp.temperature = tempread / 1000
                     } else {
-                        temp = tempread
+                        temp.temperature = tempread
                     }
                     resolve(temp)
 
@@ -63,8 +64,8 @@ function getTemp(tocat: string, unit?: string) {
     })
 }
 
-export default function temp(unit?: string) {
-    return new Promise((resolve, reject) => {
+export default function temp(unit?: Object) {
+    return new Promise<Itemp>((resolve, reject) => {
 
 // per i sistemi multicore vanno controllati + file e va fatta una media (se siamo ppignoli)
 
@@ -81,12 +82,17 @@ export default function temp(unit?: string) {
                 })
 
             } else {
+            getTemp(tocat1).then((a) => {
+                    resolve(a)
+                }).catch((err) => {
+                    reject(err)
 
+                })
             }
 
             //=> true 
         }).catch(err => {
-            reject(err)
+            reject('Questo non dovrebbe succedere')
 
         });
 
