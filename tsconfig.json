@@ -10,11 +10,6 @@
         "experimentalDecorators": true
     },
     "exclude": [
-        "node_modules",
-        "jspm_packages",
-        "typings/browser",
-        "typings/browser.d.ts",
-        "aurora-client",
-        "site"
+        "node_modules"
     ]
 }
