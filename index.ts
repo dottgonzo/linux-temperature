@@ -5,22 +5,24 @@ import * as child_process from 'child_process'
 
 const pathExists = require('path-exists');
 
+const pkg=require("./package.json") // serve per prenderti la versione della api con pkg.version
+
 
 interface Icores {
 
 temp:number;
 unit:string
-corenumber:number
-
+corenumber:number;
+version:string;
 }
 
 
 interface Itemp {
 
-media:number
-unit:string
+media:number;
+unit:string;
 
-cores: Icores[]
+cores: Icores[];
 
 }
 
