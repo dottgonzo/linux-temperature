@@ -2,10 +2,9 @@
 var Promise = require('bluebird');
 var child_process = require('child_process');
 var pathExists = require('path-exists');
-<<<<<<< HEAD
-=======
+
 var pkg = require("./package.json");
->>>>>>> dd8f848e2e1d326de865801463c48657480ad4db
+
 var exec = child_process.exec;
 function getTemp(tocat, unit) {
     return new Promise(function (resolve, reject) {
